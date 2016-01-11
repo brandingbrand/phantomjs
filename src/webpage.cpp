@@ -1279,6 +1279,16 @@ qreal WebPage::zoomFactor() const
     return m_mainFrame->zoomFactor();
 }
 
+void WebPage::setDevicePixelRatio(float ratio)
+{
+    m_customWebPage->setDevicePixelRatio(ratio);
+}
+
+float WebPage::devicePixelRatio() const
+{
+    return m_customWebPage->devicePixelRatio();
+}
+
 QString WebPage::windowName() const
 {
     return m_mainFrame->evaluateJavaScript("window.name;").toString();
